@@ -7,8 +7,8 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // start as false
 
   return (
-    <div className="app min-h-screen bg-[url('./src/assets/gemini.png')]">
-          <Toaster></Toaster>
+    <div className="app min-h-screen bg-[url('/gemini.png')] bg-cover bg-center">
+      <Toaster></Toaster>
 
       {isLoggedIn ? (
         <ChatApp />
@@ -20,4 +20,3 @@ const App = () => {
 };
 
 export default App;
-
