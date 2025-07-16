@@ -10,6 +10,9 @@ const ChatRoom = ({ room, messages, onUpdateMessages }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [image, setImage] = useState(null);
 
+    const URL = import.meta.env.URL;
+
+
   const messagesPerPage = 5;
   const filtered = messages.filter((msg) =>
     msg.question.toLowerCase().includes(searchQuery.toLowerCase())
@@ -26,7 +29,7 @@ const ChatRoom = ({ room, messages, onUpdateMessages }) => {
 
     try {
       const res = await axios.post(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBrnqaWqAwZGPnLC8lIYIyDMoT0i1fH0Yw",
+        URL,
         {
           contents: [{ parts: [{ text: question }] }],
         }
